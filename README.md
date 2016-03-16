@@ -4,6 +4,7 @@
 ## Pi Camera 모듈 연결 및 활성화
   1. 카메라 모듈을 라즈베리 파이에 설치
   2. uv4l 설치
+    - http://www.rasplay.org/?p=6257
     - 0번, 1.1, 1.2, 1.3번만 참고
   3. 디바이스에 등록
     - ``` uv4l --driver raspicam --auto-video_nr --width 1280 --height 720 --framerate 20 --vflip --hflip --encoding h264 --quantisation-parameter 35 ```
@@ -25,7 +26,7 @@
 uv4l --driver raspicam --auto-video_nr --width 1280 --height 720 --framerate 20 --vflip --hflip --encoding h264 --quantisation-parameter 35
 
 sudo chrt -a -r -p 99 `pgrep uv4l`
-```
+      ```
 
 ## 원격 RTSP 영상 파일로 저장하기 (녹화 서버)
   1. 필요한 기능
