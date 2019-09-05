@@ -13,19 +13,19 @@
     - http://www.rasplay.org/?p=4854
     - 스크립트 내용은 다음을 참고
       ```
-#!/bin/sh
-### BEGIN INIT INFO
-# Provides:          camera-enable-uv4l
-# Required-Start:    $local_fs
-# Required-Stop:     $local_fs
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Short-Description: camera enable by uv4l
-### END INIT INFO
+      #!/bin/sh
+      ### BEGIN INIT INFO
+      # Provides:          camera-enable-uv4l
+      # Required-Start:    $local_fs
+      # Required-Stop:     $local_fs
+      # Default-Start:     2 3 4 5
+      # Default-Stop:      0 1 6
+      # Short-Description: camera enable by uv4l
+      ### END INIT INFO
 
-uv4l --driver raspicam --auto-video_nr --width 1280 --height 720 --framerate 20 --vflip --hflip --encoding h264 --quantisation-parameter 35
+      uv4l --driver raspicam --auto-video_nr --width 1280 --height 720 --framerate 20 --vflip --hflip --encoding h264 --quantisation-parameter 35
 
-sudo chrt -a -r -p 99 `pgrep uv4l`
+      sudo chrt -a -r -p 99 `pgrep uv4l`
       ```
 
 ## 원격 RTSP 영상 파일로 저장하기 (녹화 서버)
